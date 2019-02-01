@@ -6,16 +6,27 @@ def badge_maker(name)
 end
 
 #batch_badge_creator
-def batch_badge_creator
-
+def batch_badge_creator(attendees)
+  badges = []
+    for attendant in attendees
+    badges.push(badge_maker(attendant))
+  end
+  return badges
 end
 
 #assign_rooms
-def assign_rooms
-
+def assign_rooms(attendees)
+  room_assignments = []
+  num = 1
+  for attendant in attendees
+    room_assignments.push("Hello, #{attendant}! You'll be assigned to room #{num}!")
+    num+=1
+  end
+  return room_assignments
 end
 
 #printer
-def printer
-
+def printer(attendees)
+    puts batch_badge_creator(attendees)
+    puts assign_rooms(attendees)
 end
